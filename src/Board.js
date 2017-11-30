@@ -97,7 +97,6 @@
     // test if a specific column on this board contains a conflict
     hasColConflictAt: function(colIndex) {
       return this.rows().reduce((total, row) => {
-        total = total || 0;
         return total + row[colIndex];
       }, 0) > 1;
     },
@@ -125,7 +124,8 @@
     // test if any major diagonals on this board contain conflicts
     hasAnyMajorDiagonalConflicts: function() {
       return this.rows().some((row, index) => {
-        return (this.hasMajorDiagonalConflictAt(index) || this.hasMajorDiagonalConflictAt(-index));
+        return (this.hasMajorDiagonalConflictAt(index) || 
+        this.hasMajorDiagonalConflictAt(-index));
       });
     },
 
