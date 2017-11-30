@@ -136,7 +136,7 @@
     //
     // test if a specific minor diagonal on this board contains a conflict
     hasMinorDiagonalConflictAt: function(minorDiagonalColumnIndexAtFirstRow) {
-      index = this.rows().length - minorDiagonalColumnIndexAtFirstRow - 1;
+      index = n - minorDiagonalColumnIndexAtFirstRow - 1;
       return this.rows().reduce((total, row) => {
         let current = row[index--];
         return current !== undefined ? total + current : total;
